@@ -1,0 +1,162 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: red;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+    border: 3px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.profile-pic:hover {
+    transform: scale(1.05);
+}
+
+.header-info {
+    flex-grow: 1;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    flex-grow: 1;  /* Important for pushing the footer down */
+}
+
+nav {
+    width: 25%;
+    background-color: #e0e0e0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin-bottom: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #333;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+section {
+    width: 50%;
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+aside {
+    width: 25%;
+    padding: 15px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: red;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 97,5%;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsiveness */
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
+            align-items:baseline;
+        }
+
+        nav, section, aside {
+            width: 92%;
+            margin-bottom: 10px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        header {
+            text-align:left;
+        }
+
+        .profile-pic {
+            width: 60px;
+            height: 60px;
+        }
+
+        footer {
+            flex-direction:row; /* Align items vertically */
+            align-items:center; /* Center items horizontally */
+        }
+    
+    @media (min-width: 768px) and (max-width: 1024px) {
+        nav {
+            float:left;
+            width: 25%; /* NAV occupies 25% of the width */
+            height: auto;
+        }
+        section {
+            float: left;
+            width: 75%; /* Section occupies 75% of the width */
+            height: auto;
+        }
+        aside {
+            float: left;
+            width: 100%; /* Aside below the NAV and Section, full width */
+            height: auto;
+            margin-top: 20px;
+        }
+    }
+    }
